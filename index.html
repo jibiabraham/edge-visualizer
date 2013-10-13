@@ -1,0 +1,51 @@
+<!doctype>
+<head>
+	<link type="text/css" rel="stylesheet" href="js/rickshaw/src/css/graph.css">
+	<link type="text/css" rel="stylesheet" href="js/rickshaw/src/css/detail.css">
+	<link type="text/css" rel="stylesheet" href="js/rickshaw/src/css/legend.css">
+	<link type="text/css" rel="stylesheet" href="js/rickshaw/examples/css/lines.css">
+
+	<script src="js/rickshaw/vendor/d3.v3.js"></script>
+	<script src="js/jquery-2.0.3.min.js"></script>
+
+	<script src="js/rickshaw/rickshaw.js"></script>
+	<script src="js/Rickshaw.Graph.Edge.js"></script>
+	<script src="js/Rickshaw.Graph.Edge.Comparison.js"></script>
+</head>
+<body>
+
+	<div id="chart_container">
+		<div id="chart"></div>
+		<div id="legend_container">
+			<div id="smoother" title="Smoothing"></div>
+			<div id="legend"></div>
+		</div>
+		<div id="slider"></div>
+	</div>
+
+	<script>
+
+		// instantiate our graph!
+		var graph = new Rickshaw.Graph.Edge.Comparison({
+			element: document.getElementById("chart"),
+			width: 960,
+			height: 500,
+			renderer: 'line',
+			dataURL: 'js/rickshaw/examples/data/data.json',
+			series: [
+				{
+					name: 'New York',
+					color: '#c05020',
+				}, {
+					name: 'London',
+					color: '#30c020',
+				}, {
+					name: 'Tokyo',
+					color: '#6060c0'
+				}
+			]
+		});
+
+	</script>
+
+</body>
